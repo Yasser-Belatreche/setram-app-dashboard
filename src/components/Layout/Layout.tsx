@@ -14,8 +14,8 @@ const Layout: React.FC<Props> = ({ children }) => {
         <AppShell
             styles={{
                 main: {
-                    background:
-                        theme.colorScheme === 'dark' ? theme.colors.dark[8] : theme.colors.gray[0],
+                    background: theme.colors.gray[0],
+                    height: '100%',
                 },
             }}
             navbarOffsetBreakpoint="sm"
