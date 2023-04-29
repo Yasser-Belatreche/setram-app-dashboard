@@ -1,0 +1,67 @@
+import React from 'react';
+import { Button, MultiSelect, Switch, Textarea, TextInput } from '@mantine/core';
+import { IconLetterCase, IconUpload } from '@tabler/icons-react';
+
+import { DEPARTEMENTS } from '../../utils/Departements';
+
+import { PdfViewer } from '../../components/PdfViewer';
+import { Layout } from '../../components/Layout/Layout';
+import { PageHeaders } from '../../components/PageHeaders';
+
+const EditDocument: React.FC = () => {
+    return (
+        <Layout>
+            <PageHeaders title={'Modifier Document'} subTitle={'Documents'} />
+
+            <form className={'bg-white p-4 h-full w-full'}>
+                <div className={'flex flex-col gap-4'}>
+                    <TextInput
+                        placeholder="Titre"
+                        label="Titre"
+                        type="text"
+                        className={'w-full'}
+                        rightSection={<IconLetterCase className="text-gray-400" size={20} />}
+                        required
+                        withAsterisk
+                    />
+                    <div className={'flex gap-4 items-center'}>
+                        <MultiSelect
+                            placeholder="Departements"
+                            label="Departements"
+                            type="text"
+                            className={'w-full'}
+                            data={DEPARTEMENTS}
+                            required
+                            withAsterisk
+                        />
+                        <Switch label="Tout" className={'mt-6'} />
+                    </div>
+
+                    <Textarea
+                        placeholder="Description"
+                        label="Description"
+                        className={'w-full'}
+                        required
+                        withAsterisk
+                    />
+
+                    <PdfViewer
+                        link={
+                            'https://firebasestorage.googleapis.com/v0/b/yalidine-documents.appspot.com/o/documents%2F58906-FICHE%20PROCESSUS%20ACHAT.xlsx?alt=media&token=55c48f06-6e25-49d1-9e47-f4d0a0c9d430'
+                        }
+                    />
+
+                    <Button size={'sm'} variant={'filled'} leftIcon={<IconUpload />}>
+                        Changer le document
+                    </Button>
+
+                    <Button type="submit" size="md" loading={false} fullWidth>
+                        Confirmer
+                    </Button>
+                </div>
+            </form>
+        </Layout>
+    );
+};
+
+export { EditDocument };

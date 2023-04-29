@@ -1,4 +1,5 @@
 import React, { useRef } from 'react';
+import { TimeInput } from '@mantine/dates';
 import { ActionIcon, Button, Group, TextInput } from '@mantine/core';
 
 import { Layout } from '../../components/Layout/Layout';
@@ -13,7 +14,6 @@ import {
     IconX,
 } from '@tabler/icons-react';
 import { Separator } from '../../components/Separator';
-import { TimeInput } from '@mantine/dates';
 
 const EditEmployeePlanning: React.FC = () => {
     return (
