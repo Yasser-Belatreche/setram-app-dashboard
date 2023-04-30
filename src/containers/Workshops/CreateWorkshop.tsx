@@ -3,7 +3,7 @@ import { DateTimePicker } from '@mantine/dates';
 import { IconClock, IconLetterCase } from '@tabler/icons-react';
 import { Button, MultiSelect, Switch, Textarea, TextInput } from '@mantine/core';
 
-import { DEPARTEMENTS } from '../../utils/Departements';
+import { DEPARTMENTS } from '../../utils/DEPARTMENTS';
 
 import { Layout } from '../../components/Layout/Layout';
 import { PageHeaders } from '../../components/PageHeaders';
@@ -30,7 +30,7 @@ const CreateWorkshop: React.FC = () => {
                             label="Departements"
                             type="text"
                             className={'w-full'}
-                            data={DEPARTEMENTS}
+                            data={DEPARTMENTS}
                             required
                             withAsterisk
                         />

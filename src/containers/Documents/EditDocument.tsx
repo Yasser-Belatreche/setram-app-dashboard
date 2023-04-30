@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, MultiSelect, Switch, Textarea, TextInput } from '@mantine/core';
 import { IconLetterCase, IconUpload } from '@tabler/icons-react';
 
-import { DEPARTEMENTS } from '../../utils/Departements';
+import { DEPARTMENTS } from '../../utils/DEPARTMENTS';
 
 import { PdfViewer } from '../../components/PdfViewer';
 import { Layout } from '../../components/Layout/Layout';
@@ -30,7 +30,7 @@ const EditDocument: React.FC = () => {
                             label="Departements"
                             type="text"
                             className={'w-full'}
-                            data={DEPARTEMENTS}
+                            data={DEPARTMENTS}
                             required
                             withAsterisk
                         />
@@ -47,11 +47,11 @@ const EditDocument: React.FC = () => {
 
                     <PdfViewer
                         link={
-                            'https://firebasestorage.googleapis.com/v0/b/yalidine-documents.appspot.com/o/documents%2F58906-FICHE%20PROCESSUS%20ACHAT.xlsx?alt=media&token=55c48f06-6e25-49d1-9e47-f4d0a0c9d430'
+                            'https://firebasestorage.googleapis.com/v0/b/yalidine-documents.appspot.com/o/documents%2F1654440-Proc%C3%A9dure%20des%20ventes.pdf?alt=media&token=20ce6745-9166-4dfe-8919-a36742967b0f'
                         }
                     />
 
-                    <Button size={'sm'} variant={'filled'} leftIcon={<IconUpload />}>
+                    <Button size={'sm'} variant={'light'} leftIcon={<IconUpload />}>
                         Changer le document
                     </Button>
 

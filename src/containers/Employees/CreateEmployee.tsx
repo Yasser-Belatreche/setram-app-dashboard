@@ -6,7 +6,7 @@ import { IconCalendar, IconLetterCase, IconMail, IconPhone } from '@tabler/icons
 import { Layout } from '../../components/Layout/Layout';
 import { PageHeaders } from '../../components/PageHeaders';
 
-import { DEPARTEMENTS } from '../../utils/Departements';
+import { DEPARTMENTS } from '../../utils/DEPARTMENTS';
 
 const CreateEmployee: React.FC = () => {
     return (
@@ -52,7 +52,7 @@ const CreateEmployee: React.FC = () => {
                     />
 
                     <Select label="Sexe" placeholder="Male" data={['Male', 'Female']} />
-                    <Select label="Département" placeholder="Département" data={DEPARTEMENTS} />
+                    <Select label="Département" placeholder="Département" data={DEPARTMENTS} />
                 </div>
 
                 <div className={'flex flex-col gap-4 my-4'}>
