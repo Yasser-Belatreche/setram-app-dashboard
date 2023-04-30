@@ -24,7 +24,7 @@ const Announcements: React.FC = () => {
                 centered
                 opened={opened}
                 onClose={close}
-                title={<p className="font-medium">Supprimer l'Annonce</p>}
+                title={<p className="font-medium">Supprimer l&apos;Annonce</p>}
             >
                 <form className="flex items-center gap-x-2">
                     <Button fullWidth type="submit" color={'red'} loading={false}>

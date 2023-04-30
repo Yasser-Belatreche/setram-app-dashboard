@@ -24,7 +24,7 @@ const Events: React.FC = () => {
                 centered
                 opened={opened}
                 onClose={close}
-                title={<p className="font-medium">Supprimer l'Evenement</p>}
+                title={<p className="font-medium">Supprimer l&apos;Evenement</p>}
             >
                 <form className="flex items-center gap-x-2">
                     <Button fullWidth type="submit" color={'red'} loading={false}>

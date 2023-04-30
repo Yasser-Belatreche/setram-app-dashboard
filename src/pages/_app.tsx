@@ -2,6 +2,7 @@ import '../styles/globals.css';
 
 import { AppProps } from 'next/app';
 import { MantineProvider } from '@mantine/core';
+import { Notifications } from '@mantine/notifications';
 
 export default function App(props: AppProps) {
     const { Component, pageProps } = props;
@@ -12,6 +13,7 @@ export default function App(props: AppProps) {
             withNormalizeCSS
             theme={{ colorScheme: 'light', fontFamily: "'Poppins', sans-serif" }}
         >
+            <Notifications />
             <Component {...pageProps} />
         </MantineProvider>
     );

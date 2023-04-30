@@ -11,14 +11,14 @@ const NotFound = () => {
             <Title className={classes.title}>Vous avez trouvé un endroit secret.</Title>
 
             <Text color="dimmed" size="lg" align="center" className={classes.description}>
-                Malheureusement, ce n'est qu'une page 404. Vous avez peut-être mal tapé l'adresse ou
-                le la page a été déplacée vers une autre URL.
+                Malheureusement, ce n&apos;est qu&apos;une page 404. Vous avez peut-être mal tapé
+                l&apos;adresse ou le la page a été déplacée vers une autre URL.
             </Text>
 
             <Group position="center">
                 <Link href={'/'}>
                     <Button variant="subtle" size="md">
-                        Ramenez-moi à la page d'accueil
+                        Ramenez-moi à la page d&apos;accueil
                     </Button>
                 </Link>
             </Group>

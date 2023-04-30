@@ -2,7 +2,7 @@ import React from 'react';
 import { Button, MultiSelect, Switch, Textarea, TextInput } from '@mantine/core';
 import { IconLetterCase, IconUpload } from '@tabler/icons-react';
 
-import { DEPARTMENTS } from '../../utils/DEPARTMENTS';
+import { Departments } from '../../utils/Departments';
 
 import { PdfViewer } from '../../components/PdfViewer';
 import { Layout } from '../../components/Layout/Layout';
@@ -30,7 +30,7 @@ const EditDocument: React.FC = () => {
                             label="Departements"
                             type="text"
                             className={'w-full'}
-                            data={DEPARTMENTS}
+                            data={Departments}
                             required
                             withAsterisk
                         />

@@ -11,7 +11,7 @@ import {
 } from '@tabler/icons-react';
 import { Button, MultiSelect, Switch, Textarea, TextInput } from '@mantine/core';
 
-import { DEPARTMENTS } from '../../utils/DEPARTMENTS';
+import { Departments } from '../../utils/Departments';
 
 import { Layout } from '../../components/Layout/Layout';
 import { PageHeaders } from '../../components/PageHeaders';
@@ -38,7 +38,7 @@ const EditJob: React.FC = () => {
                             label="Departements"
                             type="text"
                             className={'w-full'}
-                            data={DEPARTMENTS}
+                            data={Departments}
                             required
                             withAsterisk
                         />
