@@ -2,7 +2,7 @@ export interface Event {
     id: string;
     title: string;
     description: string;
-    department: string[];
+    departments: string[];
     eventDate: Date;
     startDate: Date;
     endDate: Date;

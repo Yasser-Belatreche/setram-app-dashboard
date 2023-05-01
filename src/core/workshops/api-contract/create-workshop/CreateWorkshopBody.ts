@@ -1,7 +1,7 @@
 export interface CreateWorkshopBody {
     title: string;
     description: string;
-    department: string[];
+    departments: string[];
     workshopDate: Date;
     startDate: Date;
     endDate: Date;

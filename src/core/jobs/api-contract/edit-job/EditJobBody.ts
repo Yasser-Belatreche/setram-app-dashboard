@@ -1,7 +1,7 @@
 export interface EditJobBody {
     title: string;
     description: string;
-    department: string[];
+    departments: string[];
     location: string;
     salary: string;
     experience: string;

@@ -1,7 +1,7 @@
 export interface EditAnnouncementBody {
     title: string;
     description: string;
-    department: string[];
+    departments: string[];
     startDate: Date;
     endDate: Date;
 }

@@ -179,7 +179,7 @@ const columns: TableColumn<Document>[] = [
         cell: row => (
             <div className={'flex gap-2 py-4 items-center flex-wrap w-full'}>
                 {row.departments.map(d => (
-                    <Badge>{d}</Badge>
+                    <Badge key={d}>{d}</Badge>
                 ))}
             </div>
         ),
