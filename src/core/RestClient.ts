@@ -68,7 +68,7 @@ const RestClient = {
 
         if (!res.ok) return Result.Fail(await res.json());
 
-        return Result.Ok(await res.json());
+        return Result.Ok({} as Success);
     },
 };
 

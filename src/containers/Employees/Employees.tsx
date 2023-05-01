@@ -203,6 +203,7 @@ const columns: TableColumn<Employee>[] = [
     },
     {
         name: 'Email',
+        grow: 2,
         selector: row => row.email,
     },
     {
@@ -215,6 +216,7 @@ const columns: TableColumn<Employee>[] = [
     },
     {
         name: 'Deparetement',
+        grow: 2,
         cell: row => <Badge>{row.department}</Badge>,
     },
     {

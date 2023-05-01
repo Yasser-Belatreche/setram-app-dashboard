@@ -1,19 +1,20 @@
+import { useRouter } from 'next/router';
 import React, { useEffect, useRef } from 'react';
 import { DatePickerInput } from '@mantine/dates';
+import { notifications } from '@mantine/notifications';
 import { Button, Loader, PasswordInput, Select, TextInput } from '@mantine/core';
 import { IconCalendar, IconLetterCase, IconMail, IconPhone } from '@tabler/icons-react';
 
 import { Layout } from '../../components/Layout/Layout';
 import { PageHeaders } from '../../components/PageHeaders';
 
-import { Departments } from '../../utils/Departments';
 import { Genders } from '../../utils/Genders';
-import { useRouter } from 'next/router';
-import { EmployeesGateway } from '../../core/employees/EmployeesGateway';
+import { Departments } from '../../utils/Departments';
+
 import { GatewayException } from '../../core/GatewayException';
-import { notifications } from '@mantine/notifications';
-import { EditEmployeeBody } from '../../core/employees/api-contract/edit-employee/EditEmployeeBody';
+import { EmployeesGateway } from '../../core/employees/EmployeesGateway';
 import { Employee } from '../../core/employees/api-contract/base/Employee';
+import { EditEmployeeBody } from '../../core/employees/api-contract/edit-employee/EditEmployeeBody';
 
 const EditEmployee: React.FC = () => {
     const { query } = useRouter();
