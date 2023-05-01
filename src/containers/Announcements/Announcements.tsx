@@ -169,12 +169,12 @@ const columns: TableColumn<Announcement>[] = [
     {
         name: 'Date de debut',
         grow: 1,
-        selector: row => row.title,
+        selector: row => new Date(row.startDate).toLocaleDateString(),
     },
     {
         name: 'Date de fin',
         grow: 1,
-        selector: row => row.title,
+        selector: row => new Date(row.endDate).toLocaleDateString(),
     },
     {
         name: 'Active',
