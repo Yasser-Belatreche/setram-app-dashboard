@@ -12,11 +12,20 @@ import {
 } from '@tabler/icons-react';
 import Link from 'next/link';
 import { useRouter } from 'next/router';
+import { AuthGateway } from '../../core/auth/AuthGateway';
 
 const Sidebar: React.FC = () => {
     const { asPath } = useRouter();
 
     const { classes, cx } = useStyles();
+
+    const { push } = useRouter();
+
+    const handleLogout = async () => {
+        AuthGateway.Logout();
+
+        await push('/login');
+    };
 
     const links = SIDE_BAR_LINKS.map(item => (
         <Link
@@ -39,7 +48,7 @@ const Sidebar: React.FC = () => {
             </Navbar.Section>
 
             <Navbar.Section className={classes.footer}>
-                <a href="#" className={classes.link} onClick={event => event.preventDefault()}>
+                <a href="#" className={classes.link} onClick={handleLogout}>
                     <IconLogout className={classes.linkIcon} stroke={1.5} />
                     <span>Logout</span>
                 </a>

@@ -32,6 +32,10 @@ const AuthGateway = {
     Logout(): void {
         localStorage.clear();
     },
+
+    IsLoggedIn(): boolean {
+        return !!localStorage.getItem('token');
+    },
 };
 
 export { AuthGateway };
