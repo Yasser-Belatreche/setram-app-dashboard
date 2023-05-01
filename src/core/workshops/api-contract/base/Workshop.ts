@@ -6,6 +6,7 @@ export interface Workshop {
     workshopDate: Date;
     startDate: Date;
     endDate: Date;
+    isActive: boolean;
     createdAt: Date;
     updatedAt: Date;
 }
