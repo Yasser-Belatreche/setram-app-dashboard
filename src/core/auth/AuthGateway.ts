@@ -13,6 +13,9 @@ const AuthGateway = {
         const result = await RestClient.Post<LoginSuccessResponse, LoginErrorResponse>(
             `${BASE_URL}/auth/login`,
             body,
+            {
+                'Content-Type': 'application/json',
+            },
         );
 
         if (!result.success()) {

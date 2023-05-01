@@ -30,7 +30,10 @@ const WorkshopsGateway = {
         const result = await RestClient.Post<
             CreateWorkshopSuccessResponse,
             CreateWorkshopErrorResponse
-        >(`${BASE_URL}/admin/news/workshops`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/news/workshops`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();
@@ -48,7 +51,10 @@ const WorkshopsGateway = {
         const result = await RestClient.Patch<
             EditWorkshopSuccessResponse,
             EditWorkshopErrorResponse
-        >(`${BASE_URL}/admin/news/workshops/${id}`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/news/workshops/${id}`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();

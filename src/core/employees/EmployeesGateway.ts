@@ -37,7 +37,10 @@ const EmployeesGateway = {
         const result = await RestClient.Post<
             CreateEmployeeSuccessResponse,
             CreateEmployeeErrorResponse
-        >(`${BASE_URL}/admin/employees`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/employees`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();
@@ -107,7 +110,10 @@ const EmployeesGateway = {
         const result = await RestClient.Patch<
             EditEmployeeSuccessResponse,
             EditEmployeeErrorResponse
-        >(`${BASE_URL}/admin/employees/${id}`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/employees/${id}`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();
@@ -146,7 +152,10 @@ const EmployeesGateway = {
         const result = await RestClient.Patch<
             EditEmployeePlanningSuccessResponse,
             EditEmployeePlanningErrorResponse
-        >(`${BASE_URL}/admin/employees/${id}/planning`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/employees/${id}/planning`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();

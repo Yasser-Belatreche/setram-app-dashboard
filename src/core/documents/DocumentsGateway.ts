@@ -30,15 +30,15 @@ const DocumentsGateway = {
         const FD = new FormData();
 
         for (const [key, value] of Object.entries(body)) {
-            FD.append(key, value);
+            if (value instanceof Array) value.forEach(v => FD.append(`${key}[]`, v));
+            else FD.append(key, value);
         }
 
         const result = await RestClient.Post<
             CreateDocumentSuccessResponse,
             CreateDocumentErrorResponse
-        >(`${BASE_URL}/admin/documents`, FD, {
+        >(`${BASE_URL}/admin/documents/upload`, FD, {
             Authorization: token,
-            'Content-Type': 'multipart/form-data',
         });
 
         if (!result.success()) {
@@ -57,7 +57,8 @@ const DocumentsGateway = {
         const FD = new FormData();
 
         for (const [key, value] of Object.entries(body)) {
-            FD.append(key, value);
+            if (value instanceof Array) value.forEach(v => FD.append(`${key}[]`, v));
+            else FD.append(key, value);
         }
 
         const result = await RestClient.Patch<
@@ -65,7 +66,6 @@ const DocumentsGateway = {
             EditDocumentErrorResponse
         >(`${BASE_URL}/admin/documents/${id}`, FD, {
             Authorization: token,
-            'Content-Type': 'multipart/form-data',
         });
 
         if (!result.success()) {
@@ -100,7 +100,7 @@ const DocumentsGateway = {
         if (!token) throw new GatewayException('you have no token');
 
         const result = await RestClient.Get<GetDocumentsSuccessResponse, GetDocumentsErrorResponse>(
-            `${BASE_URL}/admin/documents`,
+            `${BASE_URL}/admin/documents?page=${query.page}&perPage=${query.perPage}`,
             { Authorization: token },
         );
 

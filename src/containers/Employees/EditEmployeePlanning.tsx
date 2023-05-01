@@ -1,4 +1,5 @@
 import React, { useEffect, useRef, useState } from 'react';
+import { useRouter } from 'next/router';
 import { TimeInput } from '@mantine/dates';
 import { ActionIcon, Button, Loader, TextInput } from '@mantine/core';
 import {
@@ -10,7 +11,6 @@ import {
     IconTrash,
     IconX,
 } from '@tabler/icons-react';
-import { useRouter } from 'next/router';
 import { notifications } from '@mantine/notifications';
 
 import { Separator } from '../../components/Separator';
@@ -333,6 +333,7 @@ const TimePickerInput: React.FC<{
             label={label}
             ref={ref}
             disabled={disabled}
+            className={'w-full'}
             onClick={() => ref.current?.showPicker()}
             value={`${value.hour.toString().padStart(2, '0')}:${value.minute
                 .toString()
@@ -343,7 +344,6 @@ const TimePickerInput: React.FC<{
                     <IconClock className="text-gray-400" size={20} />
                 </ActionIcon>
             }
-            className={'w-full'}
         />
     );
 };

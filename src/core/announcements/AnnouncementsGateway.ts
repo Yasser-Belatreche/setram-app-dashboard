@@ -32,7 +32,10 @@ const AnnouncementsGateway = {
         const result = await RestClient.Post<
             CreateAnnouncementSuccessResponse,
             CreateAnnouncementErrorResponse
-        >(`${BASE_URL}/admin/news/announcements`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/news/announcements`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();
@@ -53,7 +56,10 @@ const AnnouncementsGateway = {
         const result = await RestClient.Patch<
             EditAnnouncementSuccessResponse,
             EditAnnouncementErrorResponse
-        >(`${BASE_URL}/admin/news/announcements/${id}`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/news/announcements/${id}`, body, {
+            Authorization: token,
+            'Content-Type': 'application/json',
+        });
 
         if (!result.success()) {
             const { message } = result.error();

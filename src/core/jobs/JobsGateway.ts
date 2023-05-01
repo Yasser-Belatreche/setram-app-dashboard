@@ -30,7 +30,7 @@ const JobsGateway = {
         const result = await RestClient.Post<CreateJobSuccessResponse, CreateJobErrorResponse>(
             `${BASE_URL}/admin/news/jobs`,
             body,
-            { Authorization: token },
+            { Authorization: token, 'Content-Type': 'application/json' },
         );
 
         if (!result.success()) {
@@ -49,7 +49,7 @@ const JobsGateway = {
         const result = await RestClient.Patch<EditJobSuccessResponse, EditJobErrorResponse>(
             `${BASE_URL}/admin/news/jobs/${id}`,
             body,
-            { Authorization: token },
+            { Authorization: token, 'Content-Type': 'application/json' },
         );
 
         if (!result.success()) {

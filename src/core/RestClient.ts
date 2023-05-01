@@ -23,10 +23,7 @@ const RestClient = {
     ): Promise<Result<Success, Err>> {
         const res = await fetch(url, {
             method: 'POST',
-            headers: {
-                'Content-Type': 'application/json',
-                ...headers,
-            },
+            headers,
             body: body instanceof FormData ? body : JSON.stringify(body),
         });
 
@@ -42,10 +39,7 @@ const RestClient = {
     ): Promise<Result<Success, Err>> {
         const res = await fetch(url, {
             method: 'PATCH',
-            headers: {
-                'Content-Type': 'application/json',
-                ...headers,
-            },
+            headers,
             body: body instanceof FormData ? body : JSON.stringify(body),
         });
 

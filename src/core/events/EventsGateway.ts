@@ -30,7 +30,10 @@ const EventsGateway = {
         const result = await RestClient.Post<CreateEventSuccessResponse, CreateEventErrorResponse>(
             `${BASE_URL}/admin/news/events`,
             body,
-            { Authorization: token },
+            {
+                Authorization: token,
+                'Content-Type': 'application/json',
+            },
         );
 
         if (!result.success()) {
@@ -49,7 +52,7 @@ const EventsGateway = {
         const result = await RestClient.Patch<EditEventSuccessResponse, EditEventErrorResponse>(
             `${BASE_URL}/admin/news/events/${id}`,
             body,
-            { Authorization: token },
+            { Authorization: token, 'Content-Type': 'application/json' },
         );
 
         if (!result.success()) {

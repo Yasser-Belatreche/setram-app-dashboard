@@ -9,14 +9,12 @@ import { IconCalendar, IconPencil, IconPlus, IconTrash } from '@tabler/icons-rea
 import { Layout } from '../../components/Layout/Layout';
 import { PageHeaders } from '../../components/PageHeaders';
 
+import { GatewayException } from '../../core/GatewayException';
 import { EmployeesGateway } from '../../core/employees/EmployeesGateway';
 import { Employee } from '../../core/employees/api-contract/base/Employee';
 import { GetEmployeesQueryParams } from '../../core/employees/api-contract/get-employees/GetEmployeesQueryParams';
-import { GatewayException } from '../../core/GatewayException';
 
 const Employees: React.FC = () => {
-    const [opened, { open, close }] = useDisclosure(false);
-
     const { push } = useRouter();
 
     return (
@@ -32,22 +30,6 @@ const Employees: React.FC = () => {
                     Ajouter Employee
                 </Button>
             </div>
-
-            <Modal
-                centered
-                opened={opened}
-                onClose={close}
-                title={<p className="font-medium">Supprimer l&apos;Employee</p>}
-            >
-                <form className="flex items-center gap-x-2">
-                    <Button fullWidth type="submit" color={'red'} loading={false}>
-                        Supprimer
-                    </Button>
-                    <Button fullWidth color={'gray'} onClick={close}>
-                        Annuler
-                    </Button>
-                </form>
-            </Modal>
 
             <EmployeesTable />
         </Layout>
