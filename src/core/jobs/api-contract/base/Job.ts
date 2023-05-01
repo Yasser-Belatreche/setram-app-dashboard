@@ -10,6 +10,7 @@ export interface Job {
     skills: string[];
     benefits: string[];
     contact: string;
+    isActive: boolean;
     applicationDeadline: Date;
     createdAt: Date;
     updatedAt: Date;
