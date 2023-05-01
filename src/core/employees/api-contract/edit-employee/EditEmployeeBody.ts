@@ -7,4 +7,5 @@ export interface EditEmployeeBody {
     birthDate: Date;
     startingDate: Date;
     email: string;
+    newPassword?: string;
 }

@@ -65,7 +65,7 @@ const EmployeesGateway = {
         return result.unpack();
     },
 
-    async DeleteEmployees(id: string): Promise<void> {
+    async DeleteEmployee(id: string): Promise<void> {
         const token = AuthGateway.GetLocalToken();
 
         if (!token) throw new GatewayException('you have no token');
@@ -99,7 +99,7 @@ const EmployeesGateway = {
         return result.unpack();
     },
 
-    async EditEmployee(body: EditEmployeeBody): Promise<EditEmployeeSuccessResponse> {
+    async EditEmployee(id: string, body: EditEmployeeBody): Promise<EditEmployeeSuccessResponse> {
         const token = AuthGateway.GetLocalToken();
 
         if (!token) throw new GatewayException('you have no token');
@@ -107,7 +107,7 @@ const EmployeesGateway = {
         const result = await RestClient.Patch<
             EditEmployeeSuccessResponse,
             EditEmployeeErrorResponse
-        >(`${BASE_URL}/admin/employees`, body, { Authorization: token });
+        >(`${BASE_URL}/admin/employees/${id}`, body, { Authorization: token });
 
         if (!result.success()) {
             const { message } = result.error();
