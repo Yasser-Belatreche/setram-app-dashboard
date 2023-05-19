@@ -1,4 +1,11 @@
+interface Configurations {
+    baseUrl: string;
+    headers: string;
+}
+
 const RestClient = {
+    async Configure() {},
+
     async Get<Success, Err>(
         url: string,
         headers: Record<string, string> = {},

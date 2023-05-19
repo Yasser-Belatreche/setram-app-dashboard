@@ -1,6 +1,7 @@
 import React from 'react';
 import { createStyles, getStylesRef, Navbar, rem } from '@mantine/core';
 import {
+    IconBellRinging,
     IconBrowserCheck,
     IconFileDescription,
     IconHome,
@@ -106,6 +107,12 @@ const useStyles = createStyles(theme => ({
 const SIDE_BAR_LINKS = [
     { link: '/', activePathMatch: /^\/$/, label: 'Accueil', icon: IconHome },
     { link: '/employees', activePathMatch: /^\/employees.*/, label: 'Employées', icon: IconUsers },
+    {
+        link: '/notifications/send',
+        activePathMatch: /^\/notifications.*/,
+        label: 'Envoyer des notifications',
+        icon: IconBellRinging,
+    },
     {
         link: '/documents',
         activePathMatch: /^\/documents.*/,
