@@ -44,6 +44,7 @@ const SendNotificationForm: React.FC = () => {
                 title: 'Succès',
                 color: 'green',
             });
+            setLoading(false);
         } catch (e) {
             setLoading(false);
 
