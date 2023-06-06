@@ -95,7 +95,7 @@ const DocumentsGateway = {
     },
 
     GetDocumentFileLink(id: string): string {
-        return `${BASE_URL}/admin/documents/${id}/file`;
+        return `${BASE_URL}/api/documents/${id}/file`;
     },
 
     async GetDocuments(query: GetDocumentsQueryParams): Promise<GetDocumentsSuccessResponse> {
