@@ -139,7 +139,7 @@ const EditDocumentForm: React.FC<{ document: Document }> = ({ document }) => {
                     link={
                         formValues.document
                             ? URL.createObjectURL(formValues.document)
-                            : 'http://' + document.link
+                            : DocumentsGateway.GetDocumentFileLink(document.id)
                     }
                 />
 

@@ -94,6 +94,10 @@ const DocumentsGateway = {
         return result.unpack();
     },
 
+    GetDocumentFileLink(id: string): string {
+        return `${BASE_URL}/admin/documents/${id}/file`;
+    },
+
     async GetDocuments(query: GetDocumentsQueryParams): Promise<GetDocumentsSuccessResponse> {
         const token = AuthGateway.GetLocalToken();
 
